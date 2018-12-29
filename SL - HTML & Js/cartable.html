@@ -1,0 +1,64 @@
+<html>
+<head>
+	<style>
+	th {
+    font-size: x-large;
+    background-color: #4CAF50;
+    color: white;
+  }
+  th:hover{
+    background-color: #8B008B;
+  }
+  table {
+    text-align: center;
+    width: 100%;
+  }
+  p{
+  	font-size: xx-large;
+  	text-align: center;
+  	width: 100%;
+  }
+  td{
+  	font-size: x-large;
+  }
+  #name,#mod,#pro,#img{
+  	font-size: xx-large;
+  	font-family: sans-serif;
+  	background-color: red;
+  }
+</style>
+</head>
+<body>
+	<table>
+		<tr><th>List of Cars</th></tr>
+	</table>
+	<p onmouseover="show()">Move over here!</p>
+	<table id="tab" hidden border="1">
+		<tr><td id="name">Name</td><td id="mod">Model</td><td id="pro">Price</td><td id="img">Car</td></tr>
+		<tr><td id="d1"></td><td id="d2">Model</td><td id="d3">Price</td><td id="d4">Car</td></tr>
+		<tr><td id="a1"></td><td id="a2">Model</td><td id="a3">Price</td><td id="a4">Car</td></tr>
+		<tr><td id="b1"></td><td id="b2">Model</td><td id="b3">Price</td><td id="b4">Car</td></tr>
+	</table>
+</body>
+<script type="text/javascript" src="cars.json"></script>
+<script type="text/javascript">
+	function show() {
+	var car = JSON.parse(x);
+	document.getElementById("tab").removeAttribute("hidden");
+	document.getElementById("d1").innerHTML = car[0].name;
+	document.getElementById("d2").innerHTML = car[0].model;
+	document.getElementById("d3").innerHTML = car[0].price;
+	document.getElementById("d4").innerHTML = '<img src="'+car[0].image+'.jpg">';
+
+	document.getElementById("a1").innerHTML = car[1].name;
+	document.getElementById("a2").innerHTML = car[1].model;
+	document.getElementById("a3").innerHTML = car[1].price;
+	document.getElementById("a4").innerHTML = '<img src="'+car[1].image+'.jpg">';
+
+	document.getElementById("b1").innerHTML = car[2].name;
+	document.getElementById("b2").innerHTML = car[2].model;
+	document.getElementById("b3").innerHTML = car[2].price;
+	document.getElementById("b4").innerHTML = '<img src="'+car[2].image+'.jpg">';
+}
+</script>
+</html>

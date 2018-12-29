@@ -1,0 +1,73 @@
+<html>
+<head>
+<style>
+	th {
+    font-size: x-large;
+    background-color: #4CAF50;
+    color: white;
+  }
+  th:hover{
+    background-color: #8B008B;
+  }
+  table {
+    text-align: center;
+    width: 100%;
+  }
+
+</style>
+</head>
+<body>
+<table id="table1" border="1">
+  <tr>
+	<th id="head1" onmouseover="call(0)">Car 1</th>
+	<th id="head2" onmouseover="call(1)">Car 2</th>
+	<th id="head3" onmouseover="call(2)">Car 3</th>
+  </tr>
+</table>
+<br><br><br>
+<label id="label1" hidden> Car Generally looks like below:</label>
+<br><br><br>
+<label id="image1" onmouseover="ImgHover(0)"></label>
+<label id="image2" onmouseover="ImgHover(1)"></label>
+<label id="image3" onmouseover="ImgHover(2)"></label>
+<br><br><br>
+<div id="div">
+	<label id="name1"></label>
+	<label id="name2"></label>
+	<label id="name3"></label>
+</div>
+</body>
+<script type="text/javascript" src="cars.json"></script>
+<script type="text/javascript">
+  function call(i) {
+var cars = JSON.parse(x); 
+//document.getElementById("head1").addEventListener("click", headclickFunction(i));
+  //function headclickFunction(i) {
+    document.getElementById("label1").removeAttribute("hidden");
+    var n = cars[i];
+    //console.log(n.name);
+    var k 
+    for(k=0;k<3;k++)
+    {
+      document.getElementById("image"+(k+1)).setAttribute("hidden",true);
+      document.getElementById("head"+(k+1)).innerHTML = "Car "+(k+1);
+      //document.getElementById("image3").setAttribute("hidden",true);
+          }
+    document.getElementById("head"+(i+1)).innerHTML = n.name;   
+    document.getElementById("image"+(i+1)).removeAttribute("hidden");
+    document.getElementById("image"+(i+1)).innerHTML = '<img src="'+n.image+'.jpg">';
+    var l 
+    for(l=0;l<3;l++)
+    {
+      document.getElementById("name"+(l+1)).innerHTML = " ";
+    }
+  //}
+}
+function ImgHover(i){
+  var cars = JSON.parse(x); 
+  var n = cars[i];
+  document.getElementById("name"+(i+1)).innerHTML = "Car Model: "+n.model+"  "+"Price of Car: "+n.price+"  "+"Year of Production: "+n.year;
+}
+
+</script>
+</html>

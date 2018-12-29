@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<style>
+  table {
+    text-align: center;
+    width: 100%;
+  }
+  td {
+      font-size: xx-large;
+  }
+  th {
+    font-size: x-large;
+    background-color: Tomato;
+    color: white;
+  }
+  th:hover {
+    background-color: Pink;
+  }
+</style>
+</head>
+
+<body>
+<table>
+  <tr id="menu">
+  <th id= "Movie" >Movie Titles</th>
+    </tr>
+    <tr><td id="names"></td></tr>
+</table>
+</body>
+
+<script type="text/javascript">
+var request = new XMLHttpRequest();
+
+// Open a new connection, using the GET request on the URL endpoint
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
+
+request.onload = function () {
+  // Begin accessing JSON data here
+// Begin accessing JSON data here
+var boo=" ";
+var data = JSON.parse(this.response);
+
+data.forEach(movie => {
+  // Log each movie's title
+ // console.log(movie.title);
+boo=boo+'<br>'+movie.title;
+});
+document.getElementById("names").innerHTML=boo;
+  }
+// Send request
+request.send();
+</script>
+
+</html>
+

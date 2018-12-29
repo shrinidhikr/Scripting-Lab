@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    	<title>Shopping Cart</title>
+  	</head>
+
+  	<body>
+		<h1> Bill </h1>
+
+		<!-- Table displaying item, quantity and price -->
+		<table border="1" width="50%">
+			<tr>
+				<td>Item</td>
+				<td>Quantity</td>
+				<td>Price</td>
+			</tr>
+
+			{% for item in cart %}
+				<tr>
+					<td>{{item["name"]}}</td>
+					<td>{{item["quantity"]}}</td>
+					<td>{{item["price"]}}</td>
+				</tr>
+			{% endfor %}
+
+		</table>
+		
+		<!-- Total Bill Amount -->
+		<p>Total Bill Amount = Rs. {{amount}} </p>
+		
+		<!-- Link to view store -->
+		<a href="{{url_for('store')}}"> Continue Shopping </a><br>
+
+	</body>
+</html>

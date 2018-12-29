@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    	<title>Add to Cart</title>
+  	</head>
+
+  	<body>
+
+		<h1> Store Items </h1>
+
+		<!-- Form containing Items in Store -->
+		<!-- Add items to cart by entering quantity for item (no negative numbers) -->
+		<form action = "{{url_for('store')}}" method="POST">
+		  <input name = "eggs" type = "number" min="0" value="0"/>Eggs - Rs.5 <br>
+		  <input name = "milk" type = "number" min="0" value="0"/>Milk - Rs.12 <br>
+		  <input name = "bread" type = "number" min="0" value="0"/>Bread - Rs.22 <br><br>
+
+		  <input value = "Add to Cart" type = "submit"/>
+		</form><br>
+
+		<!-- Link to view cart -->
+		<a href="{{url_for('cart')}}"> View your Shopping Cart </a>
+
+	</body>
+</html>

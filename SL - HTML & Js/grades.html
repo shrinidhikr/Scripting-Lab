@@ -1,0 +1,84 @@
+<html>
+<head>
+<style>
+  h1{
+    text-align: center;
+  }
+  body{
+    font-family: sans-serif;
+    background-position: center;
+    background-color: grey;
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+  fieldset{
+    text-align: center;
+    background-color: blue;
+    font-size: 20px;
+  }
+  input{
+    width: 250px;
+  }
+  button{
+    width: 150px;
+  }
+  p{
+    color: yellow;
+  }
+  div{
+    margin-top: 150px;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 30px;
+  }
+  h1{
+    font-size: 50px;
+  }
+</style>
+</head>
+<body>
+  <h1><u>Grade Generator</u></h1>
+  <div><b>Enter the details:</b></div>
+<form action="grades.html" method="get" id="form">
+  <fieldset>
+    Name:
+    <input type="text" name="name" required ="true"> <br>
+    <br>
+    Marks:
+    <input type="number" name="marks" required ="true"> <br>
+    <br>
+    <button>Submit</button> <br>
+    <p><span id="nam"></span><span id="grade"></span></p>
+  </fieldset>
+</form>
+<script>
+  var x = location.search.substring(1).split("&");
+  var temp = x[1].split("=");
+  m = unescape(temp[1]);
+
+  temp = x[0].split("=");
+  n = unescape(temp[1]);
+  document.getElementById("nam").innerHTML = n;
+
+  if(m<40 && m>=0)
+    document.getElementById("grade").innerHTML = " has secured F grade";
+  else if(m>=40 && m<=49)
+    document.getElementById("grade").innerHTML = " has secured E grade";
+  else if(m>=50 && m<=59)
+    document.getElementById("grade").innerHTML = " has secured D grade";
+  else if(m>=60 && m<=69)
+    document.getElementById("grade").innerHTML = " has secured C grade";
+  else if(m>=70 && m<=79)
+    document.getElementById("grade").innerHTML = " has secured B grade";
+  else if(m>=80 && m<=89)
+    document.getElementById("grade").innerHTML = " has secured A grade";
+  else if(m>=90 && m<=100)
+    document.getElementById("grade").innerHTML = " has secured S grade";
+  else
+    {
+      document.getElementById("grade").innerHTML = "Invalid Marks";
+      document.getElementById("nam").innerHTML = " ";
+    }
+</script>
+</body>
+</html>

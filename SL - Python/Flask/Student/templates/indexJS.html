@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    	<title>Form Details</title>
+  	</head>
+
+  	<body>
+
+		<h1> ***Register here*** </h1>
+
+		<h5> {{msg}} </h5> <!-- Error Message displayed here -->
+
+		<!-- Form for details -->
+		<form action="{{url_for('indexJS')}}" method="POST" >
+		 	USN (Eg. 1MS02IS001)***: <input name = "usn" type="text" /><br>
+		  	D.O.B (Eg. dd/mm/yyyy)*** : <input name = "dob" type="text" /><br>
+			<input name = "***Register***" type = "submit" />
+		</form>
+
+		
+	</body>
+
+</html>

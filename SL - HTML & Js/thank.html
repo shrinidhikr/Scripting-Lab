@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Cinzel:900|Josefin+Sans|Parisienne|Playball|Lato:700|Roboto" rel="stylesheet">
+	<style type="text/css">
+		img{
+			margin-left: 350px;
+		}
+		p{
+			font-family: 'Josefin Sans', sans-serif;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+   <p> Thank you <span id="nam"></span> for connecting with us!  <br><br>
+   	<b> <u> Confirm your details once </u> </b><br> <br>
+   	<b>Address: </b> <span id="add"></span> <br> <br>
+   	<b>Contact No. :</b> <span id="cno"></span> <br> <br>
+    <img src="https://img.freepik.com/free-vector/thank-you-lettering-with-curls_1262-6964.jpg?size=338&ext=jpg" width="600" height="600"> <br>
+    Want to change any details or fill again? Please click <a href="week1.html" >here<a>.
+   </p>
+    <script>
+    var parameters = location.search.substring(1).split("&");
+    //console.log(parameters);
+    var temp = parameters[0].split("=");
+    n = unescape(temp[1]);
+    temp = parameters[1].split("=");
+    a = unescape(temp[1]);
+    temp = parameters[2].split("=");
+    c = unescape(temp[1]);
+    //console.log(l);
+    document.getElementById("nam").innerHTML = n;
+    document.getElementById("add").innerHTML = a;
+    document.getElementById("cno").innerHTML = c;
+  </script>
+</body>
+</html>

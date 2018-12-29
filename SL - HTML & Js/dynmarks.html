@@ -1,0 +1,56 @@
+<html>
+<h1> Grades </h1>
+<body>
+<form id="marks">
+Marks:<br>
+<br>
+Subject 1: <input type="number" name="marks1" min="0" max="100" id="s1"  onchange="Display()"> <br> <p id="Grade"> </p> <br>
+Subject 2: <input type="number" name="marks2" min="0" max="100" id="s2" onchange="Display()"> <br> <p id="Grade2"> </p> <br>
+<button type="button" onclick="Add()">Total</button>  <p id="Total"> </p> <br>
+<script>
+function Display()
+{
+var text1= document.getElementById("s1").value;
+var text2= document.getElementById("s2").value;
+var g1=document.getElementById("Grade");
+var g2=document.getElementById("Grade2");
+Grading(text1,g1);
+Grading(text2,g2);
+}
+function Grading(text,g)
+{
+if(text >=90 && text<=100)
+g.innerHTML = "S+ Grade";
+else if (text <90 && text>=80)
+g.innerHTML = "S Grade";
+else if (text <80 && text>=70)
+g.innerHTML = "A Grade";
+else if (text <70 && text>=60)
+g.innerHTML = "B Grade";
+else if (text <60 && text>=50)
+g.innerHTML = "C Grade";
+else if (text <50 && text>=40)
+g.innerHTML = "D Grade";
+else if (text <40 && text>0)
+g.innerHTML = "FAIL";
+else g.innerHTML = "Enter valid marks";
+}
+function Add()
+{
+var text1= parseInt(document.getElementById("s1").value);
+var text2= parseInt(document.getElementById("s2").value);
+var total=document.getElementById("Total");
+if(text1 && text2 && text1>0 &&text2>0 && text1<=100 && text2<=100)
+{
+total.innerHTML = text1+text2;
+}
+else total.innerHTML = "Enter valid marks";
+if(text1==0)
+total.innerHTML = text2;
+if(text2==0)
+total.innerHTML = text1;
+}
+</script>
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+	<style type="text/css">
+		fieldset{
+		    float: left;
+		    width: 50%;
+		    margin: 0;
+		    box-sizing: border-box;
+		}
+	</style>
+	<script type="text/javascript">
+		function calculate()
+		{
+			var cp=40,cc=60;
+			var pastval=0,cakval=0;
+			var p=0,c=0;
+		  if(document.getElementById('c1').checked)
+		  {
+			
+				 p = parseInt(document.getElementById('qp').value);
+				 if(p>0)
+				 { 
+				   pastval = p*cp;
+				   document.getElementById('pat').innerHTML=p;
+			     }
+			     else
+			     	document.getElementById('pat').innerHTML="Enter a valid quantity";
+			    document.getElementById('cak').innerHTML=0;
+		   
+		 }
+		  if(document.getElementById('c2').checked)
+		  {
+			
+				c = parseInt(document.getElementById('qc').value);
+				if(c>0)
+				{
+				  cakval = c*cc;
+				  document.getElementById('cak').innerHTML=c;
+				}
+				else
+			      document.getElementById('cak').innerHTML="Enter a valid quantity";
+			    document.getElementById('pat').innerHTML=0;
+		  }
+		  
+			var total  = cakval+pastval;
+			document.getElementById('cost').innerHTML=total;
+		}
+	</script>
+</head>
+<body>
+	<form>
+	<fieldset>
+		<legend>Pasteries</legend>	
+	<div><img src="https://www.cscassets.com/recipes/zoom/sparks/zoom_24046.jpg" width="300" height="300"><br>
+		<input type="radio" name="select" id="c1" value="Pasteries">Cost of Pasteries: Rs.40 each<br>
+		Quantity:<br>
+		<input type="number" name="p" min="0" id="qp"><br>
+	</div>
+	</fieldset>
+	<fieldset>
+		<legend>Cakes</legend>
+	<div><img src="https://m-i9.fnp.com/images/pr/l/special-chocolate-cake-1kg_1.jpg" width="300" height="300"><br>
+		<input type="radio" name="select" id="c2" value="Cakes">Cost of Cake: Rs.60 each<br>
+		Quantity:<br>
+		<input type="number" name="q" min="0" id="qc"><br>
+	</div>
+	</fieldset>
+	<p>Total quantity of Pasteries: <span id="pat"></span> <br>
+		Total quantity of Cakes: <span id="cak"></span><br>
+	 Total cost:  <span id="cost"></span><br>
+	 <br><input type="button" name="final" value="Buy" onclick="calculate()">
+	</form>
+</body>
+</html>

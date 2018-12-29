@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+    	<title>ATM</title>
+  	</head>
+
+  	<body>
+
+		<h1> ATM </h1>
+
+		<h3> Your balance is : {{balance}} </h3> <!-- Account Balance displayed here -->
+
+		<h5>{{msg}}</h5> <!-- Error Message displayed here -->
+
+		<!-- Form for amount details, with buttons to Deposit or Withdraw -->
+		<form action="{{url_for('index')}}" method="POST" id="atm">
+		 	Amount : <input name = "amount" type="number" required /><br>
+			<input type="submit" name="action" value="Withdraw" >
+			<input type="submit" name="action" value="Deposit" >
+		</form>
+
+		<!-- Javascript to validate amount -->
+		<!-- Add this in input for calling JS function onclick="return validateForm(this)"-->
+		<!--<script>
+			function validateForm(button) 
+			{
+				var form = document.getElementById("atm");
+
+				// Checks if amount field is empty
+				if (form.amount.value == "" ) {
+					alert("Amount required");
+					return false;
+				}
+
+				// Checks if amount entered is negative
+				if (parseInt(form.amount.value) < 0) {
+					alert("Cannot enter negative amount");
+					return false;
+				}
+				
+				// Checks if user clicked on Withdraw and amount is greater than 5000
+				if(button.value == "Withdraw" && parseInt(form.amount.value) > 5000)
+				{
+					alert("Cannot withdraw more than 5000");
+			        return false;
+				}
+
+				// Checks if user clicked on Deposit and amount is greater than 10000
+				if(button.value == "Deposit" && parseInt(form.amount.value) > 10000)
+				{
+					alert("Cannot deposit more than 10000");
+			        return false;
+				}
+
+				// Returns true if amount is valid
+				return true;
+			}
+		</script>-->
+	</body>
+
+</html>
