@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="number" name="num" id="num"> <br>
+	<input type="button" name="b1" onclick="mul2()" value="Multiply by 2"> <br>
+	<input type="button" name="b2" onclick="muln()" value="Square"> <br>
+	Result after multiplying with 2: <span id="res2"></span> <br>
+	Result after squaring the number: <span id="resn"></span> <br>
+</body>
+<script type="text/javascript">
+	function mul2(){
+		var x  = document.getElementById('num').value;
+		if(x == "")
+		{
+			document.getElementById('res2').innerHTML = "Invalid";	
+		}
+		else
+		document.getElementById('res2').innerHTML = x*2;
+	}
+	function muln(){
+		var x  = document.getElementById('num').value;
+		if(x == '')
+		{
+			document.getElementById('resn').innerHTML = "Invalid";	
+		}
+		else
+		document.getElementById('resn').innerHTML = x*x;
+	}
+</script>
+</html>

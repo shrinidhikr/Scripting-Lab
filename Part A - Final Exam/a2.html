@@ -1,0 +1,30 @@
+<html>
+<body>
+	<table border="1">
+		<tr >
+			<th>Name</th><th>Story</th>
+		</tr>
+		<tr>
+			<td id="p1"></td><td id="s1"></td>
+		</tr>
+		<tr>
+			<td id="p2"></td><td id="s2"></td>
+		</tr>
+	</table>
+	<br>
+	Name: <span id="p3"></span> Story: <span id="s3"></span><br>
+	Name: <span id="p4"></span> Story: <span id="s4"></span>
+</body>
+<script src="a2.json"></script>
+<script>
+	var x = JSON.parse(x);
+	document.getElementById('p1').innerHTML = x.Person1.name;
+	document.getElementById('s1').innerHTML = x.Person1.story;
+	document.getElementById('p2').innerHTML = x.Person2.name;
+	document.getElementById('s2').innerHTML = x.Person2.story;
+	document.getElementById('p3').innerHTML = x.Person3.name;
+	document.getElementById('s3').innerHTML = x.Person3.story;
+	document.getElementById('p4').innerHTML = x.Person4.name;
+	document.getElementById('s4').innerHTML = x.Person4.story;
+</script>
+</html>
