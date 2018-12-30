@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 
 df = pd.read_csv("StudentsPerformance.csv")
-df1 = pd.read_csv("StudentsPerformance.csv")
 
 print("<-----Data PreProcessing----->")
 print("\nHead and Description of Dataset")
@@ -13,8 +12,8 @@ print(df.describe())
 print(df.info())
 
 print("\nRemoving unwanted columns")
-df.drop(['lunch','test preparation course'], axis=1, inplace=True)
-print(df.head(5))
+df1 = df.drop(['lunch','test preparation course'], axis=1)
+print(df1.head(5))
 
 print("\nFilling empty values")
 df['parental level of education'] = df['parental level of education'].fillna("bachelor's degree")
@@ -27,7 +26,7 @@ print(df.head(5))
 
 print("\n")
 print("<-------Data Visualisation------->")
-print(pd.crosstab(df1.gender,df1['test preparation course']))
+print(pd.crosstab(df.gender,df['test preparation course']))
 
 ax = sns.countplot(data=df,x='gender',hue='race/ethnicity',palette='Set1')
 ax.set(title='Male and Female belonging to each group',xlabel='Gender',ylabel='Count')
