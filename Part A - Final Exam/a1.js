@@ -1,4 +1,4 @@
-function check(){
+function check1(){
 			var x = document.getElementById("num").value;
 			if(x%3==0 && x%7==0)
 				document.getElementById("res").innerHTML =  "Divisible by 3 and 7";
