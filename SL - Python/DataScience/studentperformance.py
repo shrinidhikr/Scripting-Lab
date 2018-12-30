@@ -36,15 +36,15 @@ interval = (0,40,60,75,100)
 category = ['Failed','Second Class','First Class','Distinction']
 df['grade_math']  = pd.cut(df['math score'],interval,labels=category)
 ax = sns.countplot(data=df,x='grade_math',hue=df['grade_math'],palette='Set1')
-ax.set(title='Grade Category',xlabel='Grade Category',ylabel='Count')
+ax.set(title='Math Grades',xlabel='Grade Category',ylabel='Count')
 plt.show()
 
 df['grade_reading']  = pd.cut(df['reading score'],interval,labels=category)
 ax = sns.countplot(data=df,x='grade_reading',hue=df.grade_reading,palette='Set2')
-ax.set(title='Grade Category',xlabel='Grade Category',ylabel='Count')
+ax.set(title='Reading Grades',xlabel='Grade Category',ylabel='Count')
 plt.show()
 
 df['grade_writing']  = pd.cut(df['writing score'],interval,labels=category)
 ax = sns.countplot(data=df,x='grade_writing',hue=df['grade_writing'],palette='Set3')
-ax.set(title='Grade Category',xlabel='Grade Category',ylabel='Count')
+ax.set(title='Writing Grades',xlabel='Grade Category',ylabel='Count')
 plt.show()
